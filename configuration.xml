@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<!--
+    Document   : configuration.xml
+    Created on : May 16, 2009, 10:00 PM
+    Author     : zhuyang@ebay.com
+-->
+
+
+
+<properties>
+
+<!--
+  
+      <entry key="logging">true</entry>
+      <entry key="getJobStatusQueryInterval">10000</entry>
+      <entry key="bulkDataExchangeURL">https://webservices.ebay.com/BulkDataExchangeService</entry>  
+      <entry key="fileTransferURL">https://storage.ebay.com/FileTransferService</entry>
+      <entry key="userToken">replace this with your Production token</entry>
+-->
+      
+
+      <entry key="logging">true</entry>
+      <entry key="getJobStatusQueryInterval">10000</entry>
+      <entry key="bulkDataExchangeURL">https://webservices.sandbox.ebay.com/BulkDataExchangeService</entry>  
+      <entry key="fileTransferURL">https://storage.sandbox.ebay.com/FileTransferService</entry>
+      <entry key="userToken">replace this with your Sandbox token</entry>
+    
+
+    
+
+</properties>

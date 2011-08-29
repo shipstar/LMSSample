@@ -1,0 +1,73 @@
+NOTE: This project has been modified from its original form. The original can be found here[http://developer.ebay.com/DevZone/large-merchant-services/HowTo/JavaSample/LMSSample.zip].
+
+I could not get most of the WSDL generation stuff to work, so I scrapped it and just included the jar in lib.
+
+*************** README for Large Merchant Services Java Sample ***************
+
+SOFTWARE REQUIREMENTS
+
+  - Java Web Services Developer Pack which can be downloaded from: https://jax-ws.dev.java.net/    
+  - JDK 1.6 or higher 
+
+
+
+INSTRUCTIONS
+
+After extracting the LMSSample.zip file, you should have:
+
+		-  this ReadMe file
+		-  LMSSample.jar file
+		-  configuration.xml file
+		-  a sample AddFixedPriceItem.xml file which can be uploadeded to eBay using this application
+                -  src folder contains the source code for this sample Java application
+                -  the jaxws-codeGen.xml fle
+                -  the build.xml file
+                -  the WSDL directory that includes both BulkDataExchangeService.wsdl and FileTransferService.wsdl files
+                -  lib folder (result of CodeGen)
+                -  binding folder (result of CodeGen)
+
+
+
+Run the Large Merchant Services Sample using the .jar file:
+===========================================================
+1. Go to LMSSample installation directory
+
+2. Add your Sandbox Auth Token.
+
+   Open the configuration.xml file and replace the words, "replace this with your Sandbox token" with your own Sandbox AuthToken string.    Save and close the file.
+   
+3. Run the .jar sample from a command window. 
+
+   If you run "java -jar LMSSample.jar" (as shown in the following example) without any parameters, it will display the runtime options.
+
+   Example:
+
+    >java -jar LMSSample.jar
+
+
+Re-build the Large Merchant Services Sample project
+===================================================
+1. Go to the directory where you installed the LMSSample
+
+2. At a command prompt, run the following: 
+  > ant -f build.xml
+
+
+Generate BulkDataExchangeService and FileTransferService client Stubs  
+=====================================================================
+NOTE. For synchronizing the source with new version of WSDLs, you need to download the latest WSDLs specified in the following URL and save them to the ./WSDL folder
+http://developer.ebay.com/webservices/bulk-data-exchange/latest/BulkDataExchangeService.wsdl
+http://developer.ebay.com/webservices/file-transfer/latest/FileTransferService.wsdl
+
+1. Set the system variable JWSDP_HOME to point to your Java Web Services Developer Pack installation folder
+
+2. Go to LMSSample installation directory
+
+3. At a command prompt, run the following: 
+
+  >ant -f jaxws-codeGen.xml
+
+  This command do the following steps:
+   a.  Create source code against both BulkDataExchangeService and FileTransferService WSDLs saved in ./WSDL folder
+   b.  Compile the generated stub files 
+   c.  Create one jar file named FileTransferService_BulkDataExchangeService.jar and save it to the ./lib directory.
